@@ -12,13 +12,19 @@ module.exports = {
 
     //Request error
     //SIGNUP
+    //쿠팡이츠에 추가_ validation
+
+    SIGNUP_PHONE_EMPTY : { "isSuccess": false, "code": 1997, "message":"휴대폰 번호를 입력해주세요" },
+    SIGNUP_PHONE_LENGTH : { "isSuccess": false, "code": 1998, "message":"휴대폰 번호는 12자리 미만으로 입력해주세요." },
+    SIGNUP_PHONE_ERROR_TYPE : { "isSuccess": false, "code": 1999, "message":"휴대폰 번호 형식을 정확하게 입력해주세요." },
+
     SIGNUP_EMAIL_EMPTY : { "isSuccess": false, "code": 2001, "message":"이메일을 입력해주세요" },
     SIGNUP_EMAIL_LENGTH : { "isSuccess": false, "code": 2002, "message":"이메일은 30자리 미만으로 입력해주세요." },
     SIGNUP_EMAIL_ERROR_TYPE : { "isSuccess": false, "code": 2003, "message":"이메일을 형식을 정확하게 입력해주세요." },
     SIGNUP_PASSWORD_EMPTY : { "isSuccess": false, "code": 2004, "message": "비밀번호를 입력 해주세요." },
     SIGNUP_PASSWORD_LENGTH : { "isSuccess": false, "code": 2005, "message":"비밀번호는 6~20자리를 입력해주세요." },
-    SIGNUP_NICKNAME_EMPTY : { "isSuccess": false, "code": 2006, "message":"닉네임을 입력 해주세요." },
-    SIGNUP_NICKNAME_LENGTH : { "isSuccess": false,"code": 2007,"message":"닉네임은 최대 20자리를 입력해주세요." },
+    SIGNUP_USERNAME_EMPTY : { "isSuccess": false, "code": 2006, "message":"이름을 입력 해주세요." },
+    SIGNUP_USERNAME_LENGTH : { "isSuccess": false,"code": 2007,"message":"이름은 최대 20자리를 입력해주세요." },
 
     //SIGNIN
     SIGNIN_EMAIL_EMPTY : { "isSuccess": false, "code": 2008, "message":"이메일을 입력해주세요" },
