@@ -5,10 +5,10 @@ const baseResponse = require("../../../config/baseResponseStatus");
 const {response, errResponse} = require("../../../config/response");
 
 const regexEmail = require("regex-email");
-const regexPhone = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+
 
 /**
- * API No. 1
+ * API No. 6
  * API Name : 유저 회원가입 API
  * [POST] /app/users/signup
  */
@@ -61,8 +61,8 @@ exports.postUsers = async function (req, res) {
 
     // 형식 체크 (by 정규표현식)
     //if (!regexPhone.test(userPhone))
-    if (regexPhone.test(userPhone))
-        return res.send(response(baseResponse.SIGNUP_PHONE_ERROR_TYPE));
+    // if (regexPhone.test(userPhone))
+    //     return res.send(response(baseResponse.SIGNUP_PHONE_ERROR_TYPE));
 
     // createUser 함수 실행을 통한 결과 값을 signUpResponse에 저장
     const signUpResponse = await coupangeatsUserService.createUser(
@@ -72,3 +72,23 @@ exports.postUsers = async function (req, res) {
     // signUpResponse 값을 json으로 전달
     return res.send(signUpResponse);
 };
+
+
+/**
+ * API No. 8
+ * API Name : 회원 주소 입력
+ * [POST] /app/users/postAddress
+ */
+exports.postUserAddress = async function (req, res) {
+
+    /*
+    Body: userIndex, userAddress
+     */
+
+    const {userIndex, userAddress} = req.body;
+
+        const addUserAddress = await coupangeatsUserService.addUserAddress(userIndex, userAddress);
+        return res.send(addUserAddress);
+    };
+
+

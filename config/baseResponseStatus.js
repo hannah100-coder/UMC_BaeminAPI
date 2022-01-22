@@ -57,6 +57,8 @@ module.exports = {
     STORE_STARGRADE_EMPTY: {"isSuccess": false, "code": 2026, "message": "가게 별점을 입력해주세요." },
 
 
+    USER_ADDRESS_EMPTY: {"isSuccess": false, "code": 2029, "message": "유저 주소를 입력해주세요." },
+
     // Response error
     SIGNUP_REDUNDANT_EMAIL : { "isSuccess": false, "code": 3001, "message":"중복된 이메일입니다." },
     SIGNUP_REDUNDANT_NICKNAME : { "isSuccess": false, "code": 3002, "message":"중복된 닉네임입니다." },

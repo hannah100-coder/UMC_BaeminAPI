@@ -117,3 +117,26 @@ exports.createUser = async function (userEmail, userPassword, userName, userPhon
 //     //    return errResponse(baseResponse.DB_ERROR);
 //     // }
 // };
+
+
+exports.addUserAddress = async function (userIndex, userAddress) {
+        //try {
+
+            if(!userIndex){
+                return response(baseResponse.USER_USERID_EMPTY);
+            }else{
+                if(!userAddress)
+                    return response(baseResponse.USER_ADDRESS_EMPTY);
+                const connection = await pool.getConnection(async (conn) => conn);
+                const addUserAddressResult = await coupangeatsUserDao.updateUserAddress(connection, userIndex, userAddress)
+                connection.release();
+
+                return response(baseResponse.SUCCESS);
+            }
+
+
+        // } catch (err) {
+        //         logger.error(`App - editUser Service error\n: ${err.message}`);
+        //         return errResponse(baseResponse.DB_ERROR);
+        // }
+};

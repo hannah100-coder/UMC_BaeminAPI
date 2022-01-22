@@ -1,4 +1,4 @@
-// foodcategoryindex로 가게 조회
+ // foodcategoryindex로 가게 조회
 async function selectStoreByFoodCategoryIndex(connection, foodCategoryIndex) {
     const selectStoreByFoodCategoryIndexQuery = `
                  SELECT s.foodCategoryIndex, s.storeName, s.storeProfileImgUrl, s.fastDelivery
